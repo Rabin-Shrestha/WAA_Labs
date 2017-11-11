@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Random;
 
 /**
@@ -19,14 +18,14 @@ public class GuessNumberServlet extends HttpServlet {
         String guessedValue = request.getParameter("guessedValue");
         String randomValue = request.getParameter("randomval");
 
-        System.out.println("Guessed value : "+guessedValue);
-        System.out.println(" Random Value :"+randomValue);
+        System.out.println("Guessed value : " + guessedValue);
+        System.out.println(" Random Value :" + randomValue);
 
         String errorMsg = "";
-        String reslutMsg="";
+        String reslutMsg = "";
         if (guessedValue == null || guessedValue.equals("")) {
             // not valid input
-            errorMsg="Invalid value entered ";
+            errorMsg = "Invalid value entered ";
         } else {
             // check Input value from users
             Integer guessed = Integer.parseInt(guessedValue);
@@ -34,31 +33,31 @@ public class GuessNumberServlet extends HttpServlet {
             Integer rand = Integer.parseInt(randomValue);
             if (rand.equals(guessed)) {
                 //matched
-                reslutMsg="Correct, Congratulation, your guess matched ";
+                reslutMsg = "Correct, Congratulation, your guess matched ";
             } else if (guessed < rand) {
                 // to small
-                errorMsg="Too low, Try again ";
+                errorMsg = "Too low, Try again ";
             } else {
                 // large
-                errorMsg="Too high, Try again ";
+                errorMsg = "Too high, Try again ";
             }
         }
 
         // #### writing response body  ####
-        request.setAttribute("Error",errorMsg);
-        request.setAttribute("Result",reslutMsg);
+        request.setAttribute("Error", errorMsg);
+        request.setAttribute("Result", reslutMsg);
 
         Random rand = new Random();
         Integer randomNumber = rand.nextInt(10);
-        request.setAttribute("randomValue",randomNumber);
-        request.getRequestDispatcher("/guessNumber.jsp").forward(request,response);
+        request.setAttribute("randomValue", randomNumber);
+        request.getRequestDispatcher("/guessNumber.jsp").forward(request, response);
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-    {   Random rand = new Random();
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Random rand = new Random();
         Integer randomNumber = rand.nextInt(10);
         System.out.println(randomNumber);
-        request.setAttribute("randomValue",randomNumber);
-        request.getRequestDispatcher("/guessNumber.jsp").forward(request,response);
+        request.setAttribute("randomValue", randomNumber);
+        request.getRequestDispatcher("/guessNumber.jsp").forward(request, response);
     }
 }
