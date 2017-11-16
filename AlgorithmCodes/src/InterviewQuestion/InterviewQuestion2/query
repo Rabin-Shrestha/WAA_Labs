@@ -1,0 +1,9 @@
+select dept_id, count(distinct emp_id) as count, sum(salary) as sum_of_salary
+from department a
+left join
+	employee b
+on
+	a.dept_id = b.dept_id
+group by dept_id
+having count(distinct emp_id) > 0
+order by dept_id;
