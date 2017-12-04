@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+    <f:view>
+        <h:outputLabel  value="Trip Information"/>
+    </f:view><br/><br/>
+
+    <h:outputLabel value="From: "/>
+    <h:outputLabel value="#{tripTracker.locationFrom}"/><br/>
+    <h:outputLabel value="To: "/>
+    <h:outputLabel value="#{tripTracker.locationTo}"/><br/>
+    <h:outputLabel value="Departure Date: "/>
+    <h:outputLabel value="#{tripTracker.departureDate}"/><br/>
+    <h:outputLabel value="Return Date: "/>
+    <h:outputLabel value="#{tripTracker.returnDate}"/><br/>
+    <h:outputText value="#{tripTracker.roundTrip == 'true' ? 'Round Trip' : 'One Way'}"/><br/>
+    <h:outputLabel value="Options : #{tripTracker.optionsString}"></h:outputLabel>
+
+</h:body>
+
+</html>

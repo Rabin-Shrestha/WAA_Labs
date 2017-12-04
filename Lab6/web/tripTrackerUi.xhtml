@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+    <br/>
+    <h:form>
+        <h:outputLabel>From: </h:outputLabel>
+        <h:selectOneMenu value="#{tripTracker.locationFrom}">
+           <f:selectItem itemValue="Amsterdam" itemLabel="Amsterdam"></f:selectItem>
+           <f:selectItem itemValue="Paris" itemLabel="Paris"></f:selectItem>
+           <f:selectItem itemValue="Lissabon " itemLabel="Lissabon "></f:selectItem>
+        </h:selectOneMenu><br/>
+        <h:outputLabel>To: </h:outputLabel>
+        <h:selectOneMenu value="#{tripTracker.locationTo}">
+           <f:selectItem itemValue="NewYork" itemLabel="NewYork"></f:selectItem>
+           <f:selectItem itemValue="Boston" itemLabel="Boston"></f:selectItem>
+           <f:selectItem itemValue="Chicago" itemLabel="Chicago"></f:selectItem>
+        </h:selectOneMenu>
+        <br/>
+
+        <h:outputLabel value="Departure Date: "/>
+        <h:inputText value="#{tripTracker.departureDate}">
+            <f:convertDateTime pattern="yyyy-MM-dd"/>
+        </h:inputText><br/>
+        <!--<h:inputText type="date" value="#{tripTracker.departureDate}"/><br/>-->
+        <h:outputLabel value="Return Date: "/>
+        <h:inputText value="#{tripTracker.returnDate}">
+            <f:convertDateTime pattern="yyyy-MM-dd"/>
+        </h:inputText><br/>
+        <!--<h:inputText type="date" value="#{tripTracker.returnDate}"/><br/>-->
+        <h:selectOneRadio value="#{tripTracker.roundTrip}">
+            <f:selectItem itemValue="true" itemLabel="RoundTrip" />
+            <f:selectItem itemValue="true" itemLabel="OneWay" />
+        </h:selectOneRadio>
+        <br/>
+        <h:outputLabel>Options</h:outputLabel><br/>
+        <h:selectManyCheckbox value="#{tripTracker.options}">
+            <f:selectItem itemValue="First Class" itemLabel="First Class" />
+            <f:selectItem itemValue=" Exact these Date" itemLabel="Exact these Date" />
+            <f:selectItem itemValue="No Stop Over" itemLabel="No Stop Over" />
+        </h:selectManyCheckbox>
+
+        <h:commandButton value="Submit" action="#{tripTracker.gerInformation()}"></h:commandButton>
+    </h:form>
+
+
+</h:body>
+
+
+</html>
