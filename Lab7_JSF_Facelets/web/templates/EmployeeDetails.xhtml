@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition>
+    <h:form>
+        <h:dataTable value="#{employeeDetails.employee}" var="emp" border="2">
+            <h:column>
+                <f:facet name="header">ID</f:facet>
+                <h:outputText value="#{emp.id}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                <h:outputText value="#{emp.name}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Salary</f:facet>
+                <h:outputText value="#{emp.salary}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Phone</f:facet>
+                <h:outputText value="#{emp.phone}"/>
+            </h:column>
+        </h:dataTable>
+    </h:form>
+</ui:composition>
+
+</html>

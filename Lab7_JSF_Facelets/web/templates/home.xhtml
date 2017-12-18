@@ -1,11 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head></h:head>
+<h:body>
+
+    <table style="border: 2px solid black">
+        <tr style="outline: thin solid">
+            <td><ui:insert name="header">
+                <ui:include src="/templates/header.xhtml"/>
+            </ui:insert>
+            </td>
+        </tr>
+
+        <tr style="outline: thin solid">
+            <td>
+                <div style="border-width:2px; border-color:black; border-style:solid;">
+                    <ui:insert name="leftMenu">
+                        <ui:include src="/templates/leftMenu.xhtml"/>
+                    </ui:insert>
+                </div>
+            </td>
+            <td>
+                <div style="border-width:2px; border-color:black; border-style:solid;">
+                    <ui:insert name="content">
+                        <ui:include src="/templates/EmployeeDetails.xhtml"/>
+                    </ui:insert>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <br/>
+
+
+</h:body>
 </html>
