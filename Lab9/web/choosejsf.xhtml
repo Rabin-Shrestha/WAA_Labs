@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:selectOneMenu  id = "AirId"  valueChangeListener="#{airlineBean.checkAirline}" onchange="submit()">
+                <f:selectItem itemValue="all" itemLabel="All" />
+                <f:selectItem itemValue="klm" itemLabel="KLM" />
+                <f:selectItem itemValue="north west" itemLabel="North West" />
+                <f:selectItem itemValue="united airlines" itemLabel="United Airlines" />
+
+            </h:selectOneMenu>
+            <br/><br/>
+            <h:dataTable value="#{airlineBean.alist}" var="thelist" border="1">
+                <h:column> #{thelist.from}</h:column>
+				
+                <h:column> #{thelist.to}</h:column>
+                
+				<h:column> #{thelist.date}</h:column>
+                <h:column> #{thelist.airline}</h:column>
+                <h:column> #{thelist.price}</h:column>
+            
+            </h:dataTable>
+            
+        </h:form>
+    </h:body>
+</html>
+
