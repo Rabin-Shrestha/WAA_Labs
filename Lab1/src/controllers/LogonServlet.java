@@ -17,13 +17,11 @@ public class LogonServlet extends HttpServlet {
 
         String uname=request.getParameter("username");
         String upass=request.getParameter("password");
-
-
         if(!uname.equals("user") || !upass.equals("pass"))
         {
             System.out.println();
             PrintWriter out = response.getWriter();
-            out.println("<html>");
+            out.print("<html>");
             out.println("<body>");
             out.println("Wrong Userid or Password ! please Write again\"");
             out.println("<form method=post action=/Login>");

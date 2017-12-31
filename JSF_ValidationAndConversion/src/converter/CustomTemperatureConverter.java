@@ -12,13 +12,11 @@ import javax.faces.convert.FacesConverter;
 public class CustomTemperatureConverter implements Converter {
     @Override
     public Object getAsObject(FacesContext facesContext, UIComponent uiComponent, String s) {
-       if(s==null || s.length()<1)return "Invalid Tempreture";
-
+       if(s==null || s.length()<1)return "Invalid temprature";
        String resultTemp="";
        if(s.charAt(0)=='F')resultTemp="The Temprature is"+s.substring(1)+" Fahrenheit";
        else
        resultTemp="The Temprature is"+s.substring(1)+" Celsius";
-
         return resultTemp;
     }
 

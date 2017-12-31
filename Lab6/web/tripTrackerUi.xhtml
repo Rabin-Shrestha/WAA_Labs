@@ -23,9 +23,10 @@
         <br/>
 
         <h:outputLabel value="Departure Date: "/>
-        <h:inputText value="#{tripTracker.departureDate}">
+        <h:inputText id="deptDate" value="#{tripTracker.departureDate}" required="true">
             <f:convertDateTime pattern="yyyy-MM-dd"/>
         </h:inputText><br/>
+
         <!--<h:inputText type="date" value="#{tripTracker.departureDate}"/><br/>-->
         <h:outputLabel value="Return Date: "/>
         <h:inputText value="#{tripTracker.returnDate}">
@@ -43,8 +44,10 @@
             <f:selectItem itemValue=" Exact these Date" itemLabel="Exact these Date" />
             <f:selectItem itemValue="No Stop Over" itemLabel="No Stop Over" />
         </h:selectManyCheckbox>
-
         <h:commandButton value="Submit" action="#{tripTracker.gerInformation()}"></h:commandButton>
+        <!--Displaying All validation Error message for detDate-->
+        <h:message for="deptDate" style="color: red">
+        </h:message>
     </h:form>
 
 

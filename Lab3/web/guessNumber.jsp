@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ taglib prefix="c1" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
@@ -37,7 +36,6 @@
 </table>
 
 
-<c:if test="${Error!='' and Error!=null}"><label style="color:red">Error Message : ${Error}</label></c:if>
 <c:if test="${Result!='' and Result!=null}"><label style="color: green">Success Message : ${Result}</label></c:if>
 
 <label> Make your Random guess between 1 to 10 </label> <br>

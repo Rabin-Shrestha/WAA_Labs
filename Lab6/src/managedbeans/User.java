@@ -1,5 +1,7 @@
 package managedbeans;
 
+import com.sun.istack.internal.NotNull;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -9,6 +11,7 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean
 @SessionScoped
 public class User {
+    @NotNull
     private String userId;
     private String password;
     private String userName;

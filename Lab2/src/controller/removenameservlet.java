@@ -4,12 +4,11 @@ import models.names.Person;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 /**
  * Created by Rabin Shrestha on 11/1/2017.
  */
+
 public class removenameservlet extends javax.servlet.http.HttpServlet {
     HttpSession Session;
     HashMap<Integer,Person> personListSession = new HashMap<>();

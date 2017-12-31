@@ -4,7 +4,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by Rabin Shrestha on 12/3/2017.
@@ -75,25 +74,5 @@ public  String gerInformation()
 {
     return "tripTrackerInfo.xhtml";
 }
-   /* public String getInformation() {
 
-        StringBuilder info = new StringBuilder("");
-
-        info.append("locationFrom: " + locationFrom + '\'' +
-                "\n locationTo:" + locationTo + '\'' +
-                "\n departureDate:" + departureDate +
-                "\n returnDate:" + returnDate);
-
-        if (isRoundTrip)
-            info.append("\n RoundTrip");
-        info.append("Options :");
-        *//*if (isFirstClass)
-            info.append(" First Class");
-        if (isStopOver)
-            info.append(", Stop Over");
-        if (isExactDate)
-            info.append(", Exact Date");*//*
-
-        return info.toString();
-    }*/
 }

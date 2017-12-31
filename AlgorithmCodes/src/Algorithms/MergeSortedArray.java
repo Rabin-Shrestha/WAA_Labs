@@ -1,4 +1,4 @@
-package ManagedBeans;
+package Algorithms;
 
 import java.util.Arrays;
 public class MergeSortedArray {

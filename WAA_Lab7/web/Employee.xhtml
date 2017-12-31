@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h2="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Title</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <h2:outputText>Employees of ACME Inc.</h2:outputText>
+        <h:dataTable value="#{dataTable.employeeList}" var="e" border="2">
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+
+                <h:commandLink value="#{e.name}" action="#{dataTable.getEmployee}">
+                    <f:param name="eid" value="#{e.id}"/>
+                </h:commandLink>
+
+            </h:column>
+
+        </h:dataTable>
+
+        <h:commandButton value="ShowAll" action="showall.xhtml"/>
+    </h:form>
+
+    <h:form>
+        <h:dataTable value="#{dataTable.employee}" var="emp" border="2">
+            <h:column>
+                <f:facet name="header">ID</f:facet>
+                <h:outputText value="#{emp.id}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                <h:outputText value="#{emp.name}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Salary</f:facet>
+                <h:outputText value="#{emp.salary}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Phone</f:facet>
+                <h:outputText value="#{emp.phone}"/>
+            </h:column>
+        </h:dataTable>
+    </h:form>
+
+
+</h:body>
+
+</html>

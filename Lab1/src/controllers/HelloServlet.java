@@ -16,7 +16,7 @@ public class HelloServlet extends javax.servlet.http.HttpServlet {
         response.setContentType("text/html");
         PrintWriter out=response.getWriter();
         out.println("<Html>");
-        out.println("<ody>");
+        out.println("<body>");
         out.println("Hello World, This is from HelloServlet Controller");
         out.println("</body>");
         out.println("</html>");

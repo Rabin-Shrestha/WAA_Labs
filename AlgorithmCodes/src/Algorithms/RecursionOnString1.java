@@ -2,25 +2,31 @@ package Algorithms;
 
 /**
  * Created by Rabin Shrestha on 11/21/2017.
- * Type Given a string, compute recursively (no loops) the number of times lowercase "hi" appears in the string.
- * countHi("xxhixx") → 1
- * countHi("xhixhix") → 2
- * countHi("hi") → 1
+ * Given a string, compute recursively (no loops) a new string where all the lowercase 'x' chars have been changed to 'y' chars.
+
+
+ changeXY("codex") → "codey"
+ changeXY("xxhixx") → "yyhiyy"
+ changeXY("xhixhix") → "yhiyhiy"
  */
 public class RecursionOnString1 {
     public static void main(String[] args) {
-        System.out.println(countHi("xxhixx"));
-        System.out.println(countHi("xhixhixxhixhix"));
-        System.out.println(countHi("hi"));
-
+        System.out.println(changeXY("codey"));
+        System.out.println(changeXY("yyhiyy"));
+        System.out.println(changeXY("yhiyhiy"));
+        System.out.println(changeXY("x"));
+        System.out.println(changeXY("a"));
+        System.out.println(changeXY(""));
     }
 
-    private static int countHi(String str) {
-        if (str != null && str.length() < 2)
-            return 0;
-        if (str.substring(str.length() - 2, str.length()).equals("hi"))
-            return 1 + countHi(str.substring(0, str.length() - 1));
-        return countHi(str.substring(0, str.length() - 1));
+    public static String changeXY(String str) {
+        if (str == null)return "";
+        if(str.length()<1)
+            return "";
+         if(str.charAt(0)=='x')
+             return  'y'+changeXY(str.substring(1));
+         else
+         return str.charAt(0)+changeXY(str.substring(1));
     }
 
 }
