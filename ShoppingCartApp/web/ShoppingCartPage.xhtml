@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Facelet Title</title>
+</h:head>
+<h:body>
+    <h:form>
+        <div align="center">
+            <font color="#ff0000" size="4">
+                <strong>User Shopping cart</strong>
+            </font>
+        </div>
+        <p>
+            <h:dataTable value="#{userCart.shoppingCart.cartlist}" var="cartitem"  border="1">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Item Code"/>
+                    </f:facet>
+                    <h:outputText value="#{cartitem.product.itemCode}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Item Name"/>
+                    </f:facet>
+                    <h:outputText value="#{cartitem.product.itemName}"/>
+                    <f:facet name="footer">
+                        <h:outputText value="Total"/>
+                    </f:facet>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Price"/>
+                    </f:facet>
+                    <h:outputText value="#{cartitem.product.itemPrice}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Quantity"/>
+                    </f:facet>
+                    <h:outputText value="#{cartitem.quantity}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Total Cost :"/>
+                    </f:facet>
+                    <h:outputText value="#{cartitem.price}"/>
+                    <f:facet name="footer">
+                        <h:outputText value="#{userCart.shoppingCart.totalPrice}"/>
+                    </f:facet>
+                </h:column>
+
+                <h:column>
+                    <h:commandButton value="Remove From Cart" actionListener="#{userCart.removeFromCart}" >
+                        <f:param id="itemcode" value="#{cartitem.product.itemCode}"/>
+                    </h:commandButton>
+                </h:column>
+            </h:dataTable>
+        </p>
+        <p>
+             
+        </p>
+        <p>
+            <h:commandLink action="#{userCart.showProducts}">
+                <h:outputText value="Continue Shopping"/>
+            </h:commandLink>
+        </p>
+    </h:form>
+</h:body>
+</html>
+
