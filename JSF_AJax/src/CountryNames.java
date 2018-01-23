@@ -1,8 +1,10 @@
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.event.AjaxBehaviorEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -12,31 +14,33 @@ import java.util.stream.Collectors;
 @ManagedBean(name = "CountriesBean")
 @SessionScoped
 public class CountryNames {
-    List<String> countryNames = new ArrayList<>();
-    String SelectedCountry = "";
-    String searchText = "A";
+    List<String> allCountryNames = new ArrayList<>();
+    String searchText=""; // Input Text From User
+    Collection<String> resultCountries = new ArrayList<>();
 
     public String getSearchText() {
         return searchText;
+    }
+    public CountryNames()
+    {
+
     }
 
     public void setSearchText(String searchText) {
         this.searchText = searchText;
     }
 
-    List<String> resultCountries = new ArrayList<>();
+    public void updateMatchingCountry(AjaxBehaviorEvent e)
+    {
+        System.out.println("Update Function called :"+this.searchText);
 
-    public String getSelectedCountry() {
-        return SelectedCountry;
+       if(null==searchText|| "".equals(searchText))
+           this.resultCountries=this.allCountryNames;
+       else
+        this.resultCountries = this.allCountryNames.stream().filter(c -> c.toLowerCase().startsWith(getSearchText().toLowerCase())).collect(Collectors.toList());
     }
+    public Collection<String> getResultCountries() {
 
-    public void setSelectedCountry(String selectedCountry) {
-        SelectedCountry = selectedCountry;
-    }
-
-
-    public List<String> getResultCountries() {
-        this.resultCountries = this.countryNames.stream().filter(c -> c.startsWith(getSearchText())).collect(Collectors.toList());
         return resultCountries;
     }
 
@@ -61,7 +65,8 @@ public class CountryNames {
                 , "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor L'Este", "Togo", "Tonga", "Trinidad &amp; Tobago", "Tunisia"
                 , "Turkey", "Turkmenistan", "Turks &amp; Caicos", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying Islands", "Uruguay", "Uzbekistan", "Venezuela", "Vietnam", "Virgin Islands (US)"
                 , "Yemen", "Zambia", "Zimbabwe", "United States", "Canada",};
-        this.countryNames=Arrays.asList(country_list);
+        this.allCountryNames = Arrays.asList(country_list);
+        this.resultCountries=allCountryNames;
     }
 
 
