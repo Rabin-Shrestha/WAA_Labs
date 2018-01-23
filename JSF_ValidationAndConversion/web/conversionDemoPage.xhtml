@@ -9,6 +9,7 @@
     <h:outputLabel value=""/><br/>
 </f:view>
 <h:body>
+    <h:outputLabel value="Jsf Conversion Demo : Date And Temprature Conversion"/>
     <h:form name="myForm">
         <h:outputLabel value="Enter the date as pattern dd/MM/yy "/><br/><br/>
         <h:inputText value="#{DataBean.date}">
@@ -18,7 +19,8 @@
         <h:outputLabel value="Enter the temperature as a string starting with C for Celsius or a F for Fahrenheit,followed by a number."/><br/><br/>
         <h:inputText value="#{DataBean.temprature}">
             <f:converter converterId="myTempratureConverter"/>
-        </h:inputText><br/><br/>
+        </h:inputText>
+        <br/><br/>
         <h:commandButton action="#{DataBean.goToResult()}" value="submit"/>
     </h:form>
 </h:body>

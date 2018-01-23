@@ -25,9 +25,9 @@ public class CustomTemperatureConverter implements Converter {
         if(o==null )return "Invalid Tempreture";
         String s=(String)o;
         String resultTemp="";
-        if(s.charAt(0)=='F')resultTemp="The Temprature is"+s.substring(1)+" Fahrenheit";
+        if(s.charAt(0)=='F')resultTemp="The temprature is "+s.substring(1)+" Fahrenheit";
         else
-            resultTemp="The Temprature is"+s.substring(1)+" Celsius";
+            resultTemp="The temprature is "+s.substring(1)+" Celsius";
 
         return resultTemp;
     }
