@@ -19,6 +19,39 @@ import java.util.List;
 public class Shop {
     private List productlist = new LinkedList();
 
+    public String getpItemCode() {
+        return pItemCode;
+    }
+
+    public void setpItemCode(String pItemCode) {
+        this.pItemCode = pItemCode;
+    }
+
+    public String getpItemName() {
+        return pItemName;
+    }
+
+    public void setpItemName(String pItemName) {
+        this.pItemName = pItemName;
+    }
+
+    public Double getpItemPrice() {
+        return pItemPrice;
+    }
+
+    public void setpItemPrice(Double pItemPrice) {
+        this.pItemPrice = pItemPrice;
+    }
+
+    public String pItemCode;
+    public String pItemName;
+    public Double pItemPrice;
+    public void addItemAtShop()
+    {
+        Product p=new Product(this.pItemCode,pItemName,pItemPrice);
+        this.productlist.add(p);
+
+    }
     public Shop(){
         productlist.add(new Product("A32581","The winner takes it all",12.95));
         productlist.add(new Product("A33278","Yellow submarine",11.35));

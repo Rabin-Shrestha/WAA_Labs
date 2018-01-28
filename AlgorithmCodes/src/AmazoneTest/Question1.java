@@ -1,4 +1,4 @@
-package AmazoneTest.question1;
+package AmazoneTest;
 
 import java.util.*;
 

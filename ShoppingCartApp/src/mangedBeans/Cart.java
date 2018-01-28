@@ -1,5 +1,6 @@
 package mangedBeans;
 
+import shoppingModels.Cartitem;
 import shoppingModels.ShoppingCart;
 
 import javax.faces.bean.ManagedBean;
@@ -31,6 +32,10 @@ public class Cart {
         UIParameter component = (UIParameter) event.getComponent().findComponent("itemcode");
         String itemcode = component.getValue().toString();
         shoppingCart.removeFromCart(itemcode);
+    }
+
+    public void removeFromCartUisngObject(Cartitem cart){
+        shoppingCart.removeFromCartUsingObject(cart);
     }
 
     public String showProducts() {

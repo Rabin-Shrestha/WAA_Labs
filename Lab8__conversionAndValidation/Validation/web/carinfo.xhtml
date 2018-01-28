@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form >
+            <p>
+                Brand
+                <h:inputText value="#{carInfo.brand}" id="inputBrand"
+                             validator="#{carInfo.validateBrand}"/>
+                <h:message style="color: red" id="brandError" for="inputBrand"/>
+            </p>
+
+            <p>
+                Licence nr.
+                <h:inputText value="#{carInfo.licence}" id="inputLicence">
+                    <f:validator validatorId="licenceValidator"/>
+                </h:inputText>
+                <h:message style="color: red" id="licenceError" for="inputLicence"/>
+            </p>
+            <p>
+                Price
+                <h:inputText value="#{carInfo.price}" id="inputPrice">
+                    <f:validateLongRange maximum="100000" minimum="1"/>
+                </h:inputText>
+                <h:message style="color: red" id="priceError" for="inputPrice"/>
+
+            </p>
+            <p>
+                <h:commandButton value="Submit"
+                                 action="#{carInfo.submit}"/>
+            </p>
+        </h:form>
+
+    </h:body>
+</html>
+

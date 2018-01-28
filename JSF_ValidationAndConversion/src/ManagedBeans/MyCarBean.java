@@ -15,7 +15,6 @@ public class MyCarBean {
 
     public MyCarBean() {
     }
-
     public String getBrand() {
         return brand;
     }

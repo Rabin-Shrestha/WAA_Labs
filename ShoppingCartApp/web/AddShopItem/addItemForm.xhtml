@@ -14,23 +14,23 @@
 
 
 <ui:composition>
-    <!--<h:form>
-        Title
-        <h:inputText value="#{cdtable.title}"/>
+    <h:form>
+        Item Code :
+        <h:inputText value="#{Shop.pItemCode}"/>
         <br />
-        Artist
-        <h:inputText value="#{cdtable.artist}"/>
+        Item Name :
+        <h:inputText value="#{Shop.pItemName}"/>
         <br />
-        Price
-        <h:inputText value="#{cdtable.price}"/>
+         Item Price :
+        <h:inputText value="#{Shop.pItemPrice}"/>
         <br />
         <br />
-        <h:commandButton value="Add"
-                         action="#{cdtable.add}"/>
+        <h:commandButton value="Add Product to shop"
+                         actionListener="#{Shop.addItemAtShop}" action="/ShopItemsListPage" />
         <h:commandButton value="Cancel" type="submit"
-                         action="cdlistpage"/>
+                         action="/ShopItemsListPage.xhtml"/>
 
-    </h:form>-->
+    </h:form>
 </ui:composition>
 
 </html>

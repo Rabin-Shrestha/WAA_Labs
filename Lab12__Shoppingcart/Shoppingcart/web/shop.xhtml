@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:loadBundle basename="resources.MessageResources" var="bundle"/>
+        <h:form >
+          <div align="center">
+            <font color="#ff0000" size="4">
+              <strong>CD Shop</strong>
+            </font>
+          </div>
+          <h:dataTable value="#{shop.productlist}"
+                         var="product"
+                         border="1">
+              <h:column>
+              <f:facet name="header">
+                 <h:outputText value="#{bundle.itemcode}"/>
+              </f:facet>
+                <h:outputText value="#{product.itemcode}"/>
+              </h:column>
+             <h:column>
+             <f:facet name="header">
+                 <h:outputText value="#{bundle.productname}"/>
+              </f:facet>
+                <h:outputText value="#{product.name}"/>
+              </h:column>
+              <h:column>
+              <f:facet name="header">
+                 <h:outputText value="#{bundle.price}"/>
+              </f:facet>
+                <h:outputText value="#{product.itemprice}"/>
+              </h:column>
+              <h:column>
+                 <h:commandButton value="#{bundle.addtocart}" actionListener="#{shop.addToCart}" action="#{shop.showCart}">
+                   <f:param id="itemcode" value="#{product.itemcode}"/>
+                 </h:commandButton>
+              </h:column>
+            </h:dataTable>
+          <p>             
+          </p>
+          <p>
+            <h:commandLink action="#{shop.showCart}">
+              <h:outputText value="#{bundle.showcart}"/>
+            </h:commandLink>
+          </p>
+        </h:form>
+    </h:body>
+</html>
+

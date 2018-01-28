@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
@@ -14,7 +15,7 @@
             </font>
         </div>
         <p>
-            <h:dataTable value="#{userCart.shoppingCart.cartlist}" var="cartitem"  border="1">
+            <h:dataTable value="#{userCart.shoppingCart.cartlist}" var="cartitem" border="1">
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="Item Code"/>
@@ -53,10 +54,17 @@
                 </h:column>
 
                 <h:column>
-                    <h:commandButton value="Remove From Cart" actionListener="#{userCart.removeFromCart}" >
+                    <h:commandButton value="Remove From Cart" actionListener="#{userCart.removeFromCart}">
                         <f:param id="itemcode" value="#{cartitem.product.itemCode}"/>
                     </h:commandButton>
                 </h:column>
+                <!--Test Delete senging whole Object Directly -->
+                <h:column>
+                    <h:commandButton value="Remove From Cart Obj"
+                                     actionListener="#{userCart.removeFromCartUisngObject(cartitem)}">
+                    </h:commandButton>
+                </h:column>
+                <!--Test Code Ends-->
             </h:dataTable>
         </p>
         <p>

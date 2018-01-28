@@ -33,6 +33,7 @@ public class CountryNames {
     public void updateMatchingCountry(AjaxBehaviorEvent e)
     {
         System.out.println("Update Function called :"+this.searchText);
+        this.searchText=this.searchText.toUpperCase();
 
        if(null==searchText|| "".equals(searchText))
            this.resultCountries=this.allCountryNames;

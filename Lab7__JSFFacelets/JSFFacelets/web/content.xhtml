@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	<ui:composition>
+		 <h:panelGrid columns="2" id="panelGrid1" border="1">
+            <h:outputText value="id"
+                          id="outputText1"/>
+            <h:outputText value="#{showEmployee.selectedEmployee.id}"
+                          id="outputText2"/>
+            <h:outputText value="name"
+                          id="outputText3"/>
+            <h:outputText value="#{showEmployee.selectedEmployee.name}"
+                          id="outputText4"/>
+            <h:outputText value="phone"
+                          id="outputText5"/>
+            <h:outputText value="#{showEmployee.selectedEmployee.phone}"
+                          id="outputText6"/>
+            <h:outputText value="salary"
+                          id="outputText7"/>
+            <h:outputText value="#{showEmployee.selectedEmployee.salary}"
+                          id="outputText8"/>
+          </h:panelGrid>
+
+		</ui:composition>
+</html>
+

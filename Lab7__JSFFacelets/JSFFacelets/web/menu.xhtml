@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	<ui:composition>
+		<h:form>
+          <h:dataTable  value="#{showEmployee.employeelist}"  var="emp"  border="1">
+            <h:column>
+              <h:commandLink  value="#{emp.name}"  actionListener="#{showEmployee.selectEmployee}" >
+                <f:param id="empid" name="empid" value="#{emp.id}" />
+              </h:commandLink>
+            </h:column>
+          </h:dataTable>
+        <h:commandButton value="ShowAll"
+                         action="#{showEmployee.showAll}"/>
+        </h:form>
+	</ui:composition>
+</html>

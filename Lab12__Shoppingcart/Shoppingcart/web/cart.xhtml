@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:loadBundle basename="resources.MessageResources" var="bundle"/>
+        <h:form>
+            <div align="center">
+                <font color="#ff0000" size="4">
+                    <strong>Shoppingcart</strong>
+                </font>
+            </div>
+            <p>
+            <h:dataTable value="#{cart.shoppingCart.cartlist}"
+                         var="cartitem"
+                         border="1">
+              <h:column>
+              <f:facet name="header">
+                 <h:outputText value="#{bundle.itemcode}"/>
+              </f:facet>
+                <h:outputText value="#{cartitem.product.itemcode}"/>
+              </h:column>
+             <h:column>
+             <f:facet name="header">
+                 <h:outputText value="#{bundle.productname}"/>
+              </f:facet>
+                <h:outputText value="#{cartitem.product.name}"/>
+                <f:facet name="footer">
+                 <h:outputText value="#{bundle.totalprice}"/>
+              </f:facet>
+              </h:column>
+              <h:column>
+              <f:facet name="header">
+                 <h:outputText value="#{bundle.price}"/>
+              </f:facet>
+                <h:outputText value="#{cartitem.product.itemprice}"/>
+              </h:column>
+              <h:column>
+              <f:facet name="header">
+                 <h:outputText value="#{bundle.quantity}"/>
+              </f:facet>
+                <h:outputText value="#{cartitem.quantity}"/>
+              </h:column>
+              <h:column>
+              <f:facet name="header">
+                 <h:outputText value="#{bundle.totalprice}"/>
+              </f:facet>
+                <h:outputText value="#{cartitem.price}"/>
+                 <f:facet name="footer">
+                 <h:outputText value="#{cart.shoppingCart.totalPrice}"/>
+              </f:facet>
+              </h:column>
+
+              <h:column>
+                 <h:commandButton value="#{bundle.removefromcart}" actionListener="#{cart.removeFromCart}" >
+                   <f:param id="itemcode" value="#{cartitem.product.itemcode}"/>
+                 </h:commandButton>
+              </h:column>
+
+            </h:dataTable>
+          </p>
+          <p>
+             
+          </p>
+          <p>
+           <h:commandLink action="#{cart.showProducts}">
+              <h:outputText value="#{bundle.continueshopping}"/>
+            </h:commandLink>
+            </p>
+        </h:form>
+    </h:body>
+</html>
+

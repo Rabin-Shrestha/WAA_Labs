@@ -54,6 +54,21 @@ public class ShoppingCart {
                 }
             }
         }
+    } public void removeFromCartUsingObject(Cartitem cartitem) {
+        Iterator iter = cartlist.iterator();
+        while (iter.hasNext()) {
+            Cartitem cItem = (Cartitem) iter.next();
+            Product product = cItem.getProduct();
+            if (product.getItemCode().equals(cartitem.getProduct().getItemCode())) {
+                if (cItem.getQuantity() == 1) {
+                    iter.remove();
+                    computeTotalPrice();
+                    break;
+                } else {
+                    cItem.setQuantity(cItem.getQuantity() - 1);
+                }
+            }
+        }
     }
 
     public List getCartlist() {

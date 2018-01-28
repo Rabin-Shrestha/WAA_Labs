@@ -5,7 +5,14 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-   <f:view>
-      <h:outputLabel value="Shopping Card Application"/>
-   </f:view>
+<f:view>
+   <h1><h:outputLabel value="Shopping Cart Application"/> <br/></h1>
+</f:view>
+<h:form>
+<h:commandLink value="Go to shopping page" action="ShopItemsListPage.xhtml"></h:commandLink><br/><br/>
+<h:commandLink value="Go to My Shopping Cart page" action="ShoppingCartPage.xhtml"></h:commandLink><br/><br/>
+<h:commandLink value="Add New product on Shop" action="/AddShopItem/itemAddPage.xhtml"></h:commandLink><br/><br/>
+</h:form>
+
+
 </html>

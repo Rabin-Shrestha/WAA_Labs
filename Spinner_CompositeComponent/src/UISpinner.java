@@ -23,10 +23,10 @@ public class UISpinner extends UIInput {
         setRendererType(null); // this component renders itself
     }
 
+
     public void encodeBegin(FacesContext context) throws IOException {
         ResponseWriter writer = context.getResponseWriter();
         String clientId = getClientId(context);
-
         encodeInputField(writer, clientId);
         encodeDecrementButton(writer, clientId);
         encodeIncrementButton(writer, clientId);

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Airlines</title>
+    </h:head>
+    <h:body>
+        <h:form>
+          <p>
+            Airline <h:selectOneMenu value="#{airlines.selectedAirline}"
+                             id="selectOneMenu1"
+                             valueChangeListener="#{airlines.changeAirline}"
+                             onchange="submit()">
+              <f:selectItem itemLabel="All" itemValue="All" />
+              <f:selectItem itemLabel="KLM" itemValue="KLM" />
+              <f:selectItem itemLabel="NorthWest" itemValue="NorthWest" />
+              <f:selectItem itemLabel="United Airlines" itemValue="United Airlines" />
+            </h:selectOneMenu>
+          </p>
+          <p>             
+          </p>
+          <p>             
+          </p>
+          <h:dataTable value="#{airlines.flightListshow}" var="flight" border="1">
+            <h:column> <h:outputText value="#{flight.fromCity}" /></h:column>
+            <h:column> <h:outputText value="#{flight.toCity}" /></h:column>
+            <h:column> <h:outputText value="#{flight.date}" /></h:column>
+            <h:column> <h:outputText value="#{flight.airline}" /></h:column>
+            <h:column> <h:outputText value="#{flight.price}" /></h:column>
+          </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

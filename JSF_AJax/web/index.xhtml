@@ -13,14 +13,16 @@
 <h:body>
      <h:form>
         <h:outputLabel value="Enter a Country "/>
-         <h:inputText value="#{CountriesBean.searchText}" >
-             <f:ajax event="keyup" listener="#{CountriesBean.updateMatchingCountry}" render="CountryOfOrigin"/>
+         <h:inputText value="#{CountriesBean.searchText}" id="searchTextBox" >
+             <f:ajax event="keyup" listener="#{CountriesBean.updateMatchingCountry}" render="CountryOfOrigin searchTextBox"/>
          </h:inputText>
          <br/>
       <h:selectOneListbox id="CountryOfOrigin">
             <f:selectItems value="#{CountriesBean.resultCountries}" />
         </h:selectOneListbox>
+
     </h:form>
+
 </h:body>
 
 </html>

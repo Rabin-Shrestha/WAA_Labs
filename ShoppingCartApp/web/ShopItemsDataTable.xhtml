@@ -10,15 +10,19 @@
     <h:form>
         <h:dataTable value="#{Shop.productlist}" var="item" border="1">
             <h:column>
+                <f:facet name="header">Item Code</f:facet>
                 <h:outputText value="#{item.itemCode}"/>
             </h:column>
             <h:column>
+                <f:facet name="header">Item Name</f:facet>
             <h:outputText value="#{item.itemName}"/>
             </h:column>
             <h:column>
+                <f:facet name="header">Item Price</f:facet>
                 <h:outputText value="#{item.itemPrice}"/>
             </h:column>
             <h:column>
+                <f:facet name="header">Action</f:facet>
                 <h:commandButton value="Add to cart" actionListener="#{Shop.addToCart}" action="#{Shop.showCart}">
                     <f:param id="itemcode" value="#{item.itemCode}"/>
                 </h:commandButton>
